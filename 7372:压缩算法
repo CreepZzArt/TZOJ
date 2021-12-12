@@ -1,0 +1,21 @@
+//最开始的设想是都用string在写但发现这样并不好判断结束条件
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    char str1[100];
+    char str2;
+    cin >> str1;
+    int len = strlen(str1), sum = 0;
+    str2 = str1[0];
+    for (int i = 0; i <= len; ++i) {
+        if(str2 == str1[i]){
+            sum++;
+        }else if(str2 != str1[i] || str1[i] == '\0'){   //当str1[i] =='\0'时代表到了末尾
+            cout << sum << str2;
+            sum = 1;                                    //重新记数当然是1开始啦
+            str2 = str1[i];
+        }
+    }
+    return 0;
+}
