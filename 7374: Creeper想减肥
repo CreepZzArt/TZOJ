@@ -1,0 +1,26 @@
+//一道很简单的题（也是水题）
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int a[100] = {0,31,28,31,30,31,30,31,31,30,31,30,31};   //确定每个月的天数
+	int n, m, x, y, ans = 0,len;
+	cin >> n >> m >> x >> y;
+	len = a[n];                                             //确定当前月份的天数
+	for (int i = 1; i <= len;i++){                          //遍历一遍天数
+		if(m == 0){                                           //判断m是否是星期天，如果是星期天就跳过这天
+			m++;
+			continue;
+		}
+		if(m % 2 != 0){                                       //奇数日
+			ans += x;
+			m++;
+		}else if(m % 2 == 0){                                 //偶数日
+			ans += y;
+			m++;
+			if(m == 7){
+				m = 0;
+			}
+		}
+	}
+	cout << ans;
+}
