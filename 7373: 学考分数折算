@@ -1,0 +1,20 @@
+//噢难得的水题，直接随便过一遍就好了
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    char str1[100];
+    int sum = 0, len;
+    cin >> str1;
+    len = strlen(str1);
+    for (int i = 0; i < len; ++i) {   //遍历数组
+        switch (str1[i]) {
+            case 'A':sum += 10;break;
+            case 'B':sum += 9;break;
+            case 'C':sum += 7;break;
+            case 'D':sum += 4;break;
+        }
+    }
+    cout << sum;
+    return 0;
+}
