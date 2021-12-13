@@ -1,0 +1,37 @@
+//哇哦输入为不超过107的一个自然数。
+//判断数字长度在拆位就好了捏
+#include <iostream>
+#include <cstring>
+using namespace std;
+int b[10], sum = 0;
+int split_number(int n)     //分解位数函数
+{
+    int i = 0;
+    while(n)
+    {
+        b[i++]=n%10;
+        n=n/10;
+    }
+}
+int number_len(int n){      //判断数字长度函数
+    int  len = 0;
+    while(n){
+        n /= 10;
+        len++;
+    }return len;
+}
+int main() {
+    int a[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6}, n, len;
+    cin >> n;
+    if(n == 0){           //函数有问题无法判断0，题目很简单自己写个判断即可
+        cout << 6;
+        return 0;
+    }
+    split_number(n);
+    len = number_len(n);
+    for (int i = 0; i < len; ++i) {
+        sum += a[b[i]];
+    }
+    cout << sum;
+    return 0;
+}
