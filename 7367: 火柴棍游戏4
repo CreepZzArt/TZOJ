@@ -1,0 +1,18 @@
+//暴力枚举完成
+#include <iostream>
+#include <cstring>
+using namespace std;
+int b[10], sum = 0;
+int main() {
+    int a[10] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6}, n, len;
+    cin >> n;
+    for (int i = 1; i <= 9; ++i) {
+        for (int j = 0; j <= 9; ++j) {
+            for (int k = 0; k <= 9; ++k) {
+                if(n == a[i] + a[j] + a[k]){        //判断满足条件
+                    cout << i << j << k <<endl;
+                }
+            }
+        }
+    }
+}
