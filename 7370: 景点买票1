@@ -1,0 +1,17 @@
+//水题没有可讲之处
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    float a;
+    cin >> a;
+    if(a < 1.2){
+        cout << "free";
+        return 0;
+    }
+    if(a >= 1.2 && a <= 1.5){
+        cout << "half";
+    }else{
+        cout << "full";
+    }
+}
