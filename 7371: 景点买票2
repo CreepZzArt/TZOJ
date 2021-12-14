@@ -1,0 +1,20 @@
+//绝绝子了，在基础上每个判断里加个cin
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main() {
+    float a, x;
+    cin >> a;
+    if(a < 1.2){
+        cin >> x;
+        cout << 0;
+        return 0;
+    }
+    if(a >= 1.2 && a <= 1.5){
+        cin >> x;
+        cout << x / 2;
+    }else{
+        cin >> x;
+        cout << x;
+    }
+}
