@@ -1,0 +1,84 @@
+//这是堆代码量完成的，说白了我的解法是很笨的没有技巧。通过一遍又一遍的测试数据最终通过
+//测试的数据里有-0000.000000和-000.00000001这样的数据。要注意前导0的去除不然肯定是wa的
+#include <bits/stdc++.h>
+using namespace std;
+bool  loss = false;
+char ch[20010];
+int a[10010], b[10010],c[10010],numlen, k = 1,LEN = 0, add = 0, xsd = 0;
+void Bcin(){
+    scanf( "%s", ch + 1 );
+    if(ch[1] == '-'){                       //高精度输入存储
+        loss = true;
+        numlen = strlen(ch + 1) - 1;
+        k = 1;
+        for (int i = 2; i <= numlen + 1; ++i) {
+            if(ch[i] == '.' || xsd == 1){
+                xsd = 1;
+                if(ch[i] - '0' > 0){        //判断小数点后是不是全部为0
+                    add = 1;
+                }
+            }else if(xsd == 0){             //小数点后不在添加进数字
+                a[k] = ch[ i ] - '0';
+                k++;
+            }
+        }
+        LEN = k;
+        if(add == 1){
+            c[LEN - 1] = 1;
+        }
+    }else{
+        numlen = strlen(ch + 1) ;
+        k = 1;
+        for( int i = 1; i <= numlen; ++i ){
+            if(ch[i] == '.'){
+                break;
+            }else{
+                a[k] = ch[i] - '0';
+                k++;
+            }
+        }
+        LEN = k;
+    }
+    if(loss){     //如果是负数的情况下进行取整的操作。具体就是+1而已,c[LEN - 1] = 1
+        for (int i = 1; i < LEN; ++i) {
+            b[i] += a[i] + c[i];
+            if(b[i] >= 10){
+                b[i + 1] += 1;
+                b[i] -= 10;
+            }
+        }
+        cout << "-";
+        if(LEN != 2){     //这里是去除前导0
+            for (int i = 1; i < LEN; ++i) {
+                if(b[i] != 0){
+                    for (int j = i; j < LEN; ++j) {
+                        cout <<b[j];
+                    }
+                    break;
+                }
+            }
+        }else{
+            for (int i = 1; i < LEN; ++i) {
+                cout << b[i];
+            }
+        }
+    }else{
+        if(LEN != 2){
+            for (int i = 1; i < LEN; ++i) {
+                if(a[i] != 0){
+                    for (int j = i; j < LEN; ++j) {
+                        cout <<a[j];
+                    }
+                    break;
+                }
+            }
+        }else{
+            for (int i = 1; i < LEN; ++i) {
+                cout << a[i];
+            }
+        }
+    }
+}
+int main() {
+    Bcin();
+}
