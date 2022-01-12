@@ -1,0 +1,103 @@
+//谁写的数据？我日你妈！和上题一样笨办法疯狂找数据。结果问题出在了-0上
+#include <bits/stdc++.h>
+using namespace std;
+bool  loss = false;
+char ch[20010];
+int a[10010], b[10010],c[10010],numlen, k = 1,LEN = 0, add = 0, xsd = 0, Luck = 0;
+void Bcin(){
+    memset(b,0,sizeof(b));
+    memset(a,0,sizeof(b));
+    memset(c,0,sizeof(b));
+    k = 1,LEN = 0, add = 0, xsd = 0, Luck = 0, loss = false;
+    scanf( "%s", ch + 1 );
+    if(ch[1] == '-'){
+        numlen = strlen(ch + 1) - 1;
+        k = 1;
+        for (int i = 2; i <= numlen + 1; ++i) {
+            if(!isdigit(ch[i])){
+                break;
+            }else if(xsd == 0){ //小数点后不在添加进数字
+                loss = true;
+                a[k] = ch[ i ] - '0';
+                k++;
+            }
+        }
+        LEN = k;
+    }else if(ch[1] == '.'){
+        numlen = strlen(ch + 1)-1 ;
+        for( int i = 2; i <= numlen + 1; ++i ){
+            if(ch[i] - '0' > 0){
+                cout << 1;
+                return;
+            }
+        }
+        cout << 0;
+        return;
+    }else{
+        numlen = strlen(ch + 1) ;
+        k = 1;
+        for( int i = 1; i <= numlen; ++i ){
+            if(ch[i] == '.' || xsd == 1){
+                xsd = 1;
+                if(ch[i] - '0' > 0){
+                    add = 1;
+                }
+            }else{
+                a[k] = ch[i] - '0';
+                k++;
+            }
+        }
+        LEN = k;
+        if(add == 1){
+            c[LEN - 1] = 1;
+        }
+    }
+    if(!loss)
+    {
+
+        for (int i = LEN; i >= 0; --i) {
+            b[i] += a[i] + c[i];
+            if(b[i] >= 10){
+                b[i - 1] += 1;
+                b[i] -= 10;
+            }
+        }
+
+            for (int i = 0; i < LEN; ++i) {
+                if(b[i] != 0){
+                    for (int j = i; j < LEN; ++j) {
+                        cout <<b[j];
+                        Luck = 1;
+                    }
+                    break;
+                }
+            }
+            if(Luck != 1){
+                cout << 0;
+            }
+
+    }else{
+        int flag = 0;
+            for (int i = 1; i < LEN; ++i) {
+                if(a[i] != 0){
+                    for (int j = i; j < LEN; ++j) {
+                        flag = i;
+                        Luck = 1;
+                        break;
+                    }
+                    break;
+                }
+            }
+            if(Luck != 1){
+                cout << 0;
+            }else{
+                cout << "-";
+                for (int j = flag; j < LEN; ++j) {
+                    cout << a[j];
+                }
+            }
+    }
+}
+int main() {
+        Bcin();
+}
