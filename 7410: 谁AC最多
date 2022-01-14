@@ -1,0 +1,39 @@
+//不过是个结构体排序而已
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+struct mate{
+    string name,TZOJ;
+    ll shcoolnum;
+    int ans;
+}a[100],b[100];
+int cmp(mate a, mate b){
+    return a.ans < b.ans;
+}
+int main()
+{
+    int n, maxn = -10, temp;
+    cin >> n;
+    for (int i = 0; i < n; ++i) {
+        cin >> a[i].name >> a[i].shcoolnum >> a[i].TZOJ >> a[i].ans;
+        if(a[i].ans > maxn){
+            maxn = a[i].ans;
+            temp = i;
+        }
+    }
+    b[0].name = a[0].name;
+    b[0].shcoolnum = a[0].shcoolnum;
+    b[0].TZOJ = a[0].TZOJ;
+    b[0].ans = a[0].ans;
+    a[0].name = a[temp].name;
+    a[0].shcoolnum = a[temp].shcoolnum;
+    a[0].TZOJ = a[temp].TZOJ;
+    a[0].ans = a[temp].ans;
+    a[temp].name = b[0].name;
+    a[temp].shcoolnum = b[0].shcoolnum;
+    a[temp].TZOJ = b[0].TZOJ;
+    a[temp].ans = b[0].ans;
+    for (int i = 0; i < n; ++i) {
+        cout << a[i].name <<" "<< a[i].shcoolnum <<" "<< a[i].TZOJ <<" "<< a[i].ans <<endl;
+    }
+}
