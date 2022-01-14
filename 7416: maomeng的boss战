@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+int n,m;
+void solve()
+{
+    m-=1;
+    int ans=m/2/n,re=m%(2*n);
+    if(re>=n)ans++;
+    printf("%d\n",ans);
+}
+int main()
+{
+    while(~scanf("%d %d",&n,&m))
+    {
+        solve();
+    }
+}
