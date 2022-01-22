@@ -1,0 +1,16 @@
+//运用二维数组来进行的解密，只要了解二维数组即可
+#include <bits/stdc++.h>
+using namespace std;
+char num[10][5] = {"","","ABC","DEF","GHI","JKL","MNO","PQRS","TUV","WXYZ"};
+void mcode(char a, char b){
+    cout << num[a - '0'][(b - '0') - 1];
+}
+int main()
+{
+    char text[1000], temp[1000];
+    cin >> text;
+    int len = strlen(text);
+    for (int i = 0; i < len; i += 2) {
+        mcode(text[i], text[i + 1]);
+    }
+}
