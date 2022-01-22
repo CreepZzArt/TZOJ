@@ -1,0 +1,44 @@
+//应该不影响switch但我始终想不起来应该怎么去实现
+#include <bits/stdc++.h>
+using namespace std;
+char num[30] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
+char num1[30] ={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+void mcode(char a){
+    switch (a) {
+        case 'Q':cout << num1[0];break;
+        case 'W':cout << num1[1];break;
+        case 'E':cout << num1[2];break;
+        case 'R':cout << num1[3];break;
+        case 'T':cout << num1[4];break;
+        case 'Y':cout << num1[5];break;
+        case 'U':cout << num1[6];break;
+        case 'I':cout << num1[7];break;
+        case 'O':cout << num1[8];break;
+        case 'P':cout << num1[9];break;
+        case 'A':cout << num1[10];break;
+        case 'S':cout << num1[11];break;
+        case 'D':cout << num1[12];break;
+        case 'F':cout << num1[13];break;
+        case 'G':cout << num1[14];break;
+        case 'H':cout << num1[15];break;
+        case 'J':cout << num1[16];break;
+        case 'K':cout << num1[17];break;
+        case 'L':cout << num1[18];break;
+        case 'Z':cout << num1[19];break;
+        case 'X':cout << num1[20];break;
+        case 'C':cout << num1[21];break;
+        case 'V':cout << num1[22];break;
+        case 'B':cout << num1[23];break;
+        case 'N':cout << num1[24];break;
+        case 'M':cout << num1[25];break;
+    }
+}
+int main()
+{
+    char text[1000], temp[1000];
+    cin >> text;
+    int len = strlen(text);
+    for (int i = 0; i < len; i++) {
+        mcode(text[i]);
+    }
+}
