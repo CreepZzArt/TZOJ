@@ -1,0 +1,50 @@
+//摩斯密码的解密
+#include <bits/stdc++.h>
+using namespace std;
+void mcode(string word){
+    string text = word;
+    if(text == "_____"){
+        cout << 0;
+    }
+    if(text == "*____"){
+        cout << 1;
+    }
+    if(text == "**___"){
+        cout << 2;
+    }
+    if(text == "***__"){
+        cout << 3;
+    }
+    if(text == "****_"){
+        cout << 4;
+    }
+    if(text == "*****"){
+        cout << 5;
+    }
+    if(text == "_****"){
+        cout << 6;
+    }
+    if(text == "__***"){
+        cout << 7;
+    }
+    if(text == "___**"){
+        cout << 8;
+    }
+    if(text == "____*"){
+        cout << 9;
+    }
+}
+int main()
+{
+    string text, temp;
+    getline(cin, text);
+    int len = text.length();
+    for (int i = 0; i < len; ++i) {
+        if(text[i] != '/'){
+            temp += text[i];
+        }else{
+            mcode(temp);
+            temp ="";
+        }
+    }
+}
