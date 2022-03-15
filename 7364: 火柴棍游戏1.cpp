@@ -1,5 +1,5 @@
 //芜湖，水题
-//解题思路：把每个数火柴写入数组即可
+//解题思路：把每个数火柴写入数组即可 
 #include <iostream>
 #include <cstring>
 using namespace std;
