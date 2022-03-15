@@ -1,4 +1,4 @@
-//今天值得纪念上传一段恶心人的代码
+//今天值得纪念上传一段恶心人的代码 
 #include <bits/stdc++.h>
 using namespace std;
 map<string, int> tian, gan, three, four, five;
