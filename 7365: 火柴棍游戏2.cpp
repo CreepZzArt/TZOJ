@@ -1,4 +1,4 @@
-//只要你会分解，这题对你来说就是小意思
+//只要你会分解，这题对你来说就是小意思 
 #include <iostream>
 #include <cstring>
 using namespace std;
