@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#pragma GCC optimize(2)
+#pragma GCC optimize(2) 
 #define ll long long
 using namespace std;
 int main()
