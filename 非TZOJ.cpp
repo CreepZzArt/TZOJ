@@ -1,4 +1,4 @@
-//一道结构体排序，看懂结构体基本上就没问题了
+//一道结构体排序，看懂结构体基本上就没问题了 
 #include<iostream>
 #include<algorithm>
 #include<cstring>
