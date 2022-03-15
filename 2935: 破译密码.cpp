@@ -1,4 +1,4 @@
-//一开始不理解END和这STAR有什么用写着写着就发现雀氏没有什么用
+//一开始不理解END和这STAR有什么用写着写着就发现雀氏没有什么用 
 //知道加密怎么写这题答案就出来了
 #include<iostream>
 #include<cstring>
