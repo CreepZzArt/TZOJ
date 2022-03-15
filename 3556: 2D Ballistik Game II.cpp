@@ -1,6 +1,6 @@
 //来着台州学院新生有奖月赛
 //对每列的和进行判断大小保留最小
-//被题目里面的多种情况坑了不然直接就AC了
+//被题目里面的多种情况坑了不然直接就AC了!
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
