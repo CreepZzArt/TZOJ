@@ -1,4 +1,4 @@
-//会写判断就可以
+//会写判断就可以1
 #include<bits/stdc++.h>
 using namespace std;
 int main()
